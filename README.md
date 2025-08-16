@@ -28,14 +28,6 @@ Welcome to the **Wild-Life Conservation Hub** – a **highly professional, fully
 
 ---
 
-## 📸 Screenshots
-
-| Homepage | Project Page |
-|----------|--------------|
-| ![Homepage](assets/images/homepage.png) | ![Project Page](assets/images/project-page.png) |
-
----
-
 ## 🛠 Technologies Used
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)  
@@ -61,28 +53,8 @@ Support wildlife conservation projects:
 
 ## 📞 Contact
 
-- ✉️ Email: contact@wildlifehub.org  
-- 🌐 Website: [wildlifehub.org](https://wildlifehub.org)  
+- ✉️ Email: nomanhafeez2345@gmail.com  
+- 🌐 Website: [wildlifehub]([https://wildlifehub.org](https://noman-hafeez0.github.io/Wild-Life-web/))  
 - 📞 Phone: +92 318 7557971 | +92 329 5673498  
 
 ---
-
-## 🤝 Contributing
-
-1. Fork the repository  
-2. Clone your fork  
-3. Create a branch for your feature/fix  
-4. Commit your changes  
-5. Push & open a Pull Request  
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** – see [LICENSE](LICENSE).  
-
----
-
-## 💬 Acknowledgements
-
-Thanks to everyone contributing to wildlife protection and this website's creation. Your dedication brings awareness and action to conservation efforts globally.
