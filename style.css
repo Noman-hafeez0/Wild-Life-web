@@ -1,767 +1,790 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Popins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popins", sans-serif;
 }
 
 @font-face {
-    font-family: 'Eightiescomeback';
-    src: url('Eighties-Comeback/Variable/EightiesComebackVAR-Regular.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Eightiescomeback";
+  src: url("Eighties-Comeback/Variable/EightiesComebackVAR-Regular.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
-
 
 body {
-    background-color: #f4f3eb;
-    color: #333;
-    font-size: 16px;
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-        "header header header header"
-        "landing landing landing landing"
-        "img1 img1 img1 img1"
-        "africa africa africa africa"
-        "img2 img2 img2 img2"
-        "container1 container1 container1 container1"
-        "boxes4 boxes4 boxes4 boxes4"
-        "africa2 africa2 africa2 africa2"
-        "footer footer footer footer"
-    ;
+  background-color: #f4f3eb;
+  color: #333;
+  font-size: 16px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "landing landing landing landing"
+    "img1 img1 img1 img1"
+    "designer designer designer designer"
+    "container1 container1 container1 container1"
+    "img2 img2 img2 img2"
+    "africa africa africa africa"
+    "boxes4 boxes4 boxes4 boxes4"
+    "africa2 africa2 africa2 africa2"
+    "footer footer footer footer";
 }
 
-
-
-
 .landing {
-    grid-area: landing;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin-top: 0%;
+  grid-area: landing;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 0%;
 }
 
 video {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .video .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 header {
-    grid-area: header;
-    position: fixed;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    padding: 10px 20px;
+  grid-area: header;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 10px 20px;
 
-    display: flex;
-    justify-content: space-around;
-    background: rgba(111, 111, 111, 0.4);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.4px);
-    -webkit-backdrop-filter: blur(2.4px);
-    z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  z-index: 1000;
 }
 
-header.onscroll {
-    background-color: rgba(255, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-}
 
 #logo {
-    width: 100px;
-    padding: 20px;
-    margin-left: -100px;
-    margin-top: 10px;
+  width: 100px;
+  padding: 20px;
+  margin-left: -100px;
+  margin-top: 10px;
 }
 
 #nav {
-    margin-left: 70px;
-    color: #ffffff;
+  margin-left: 70px;
+  color: #ffffff;
 }
 
 #nav a {
-    font-family: 'Manrope', sans-serif;
-    text-decoration: none;
-    padding: 10px 15px;
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    font-weight: 600;
-    margin-left: 0%;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    letter-spacing: 1.5px;
+  font-family: "Manrope", sans-serif;
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #9e9b66;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 0%;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 1.5px;
 }
 
 #nav a::after {
-    content: '';
-    position: absolute;
-    left: 17%;
-    bottom: 0;
-    width: 0%;
-    height: 1px;
-    background-color: rgb(255, 255, 255);
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 17%;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #9e9b66;
+  transition: width 0.3s ease;
 }
 
 #nav a:hover::after {
-    width: 70%;
+  width: 70%;
 }
 
 #nav a:hover {
-    color: #fff;
+  color: #3b4a36;
 }
 
-
 .hero-content {
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    display: flex;
-    margin-top: -300px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    z-index: 5;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  margin-top: -300px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 5;
 }
 
 .hero-content h1 {
-    font-family: 'Eightiescomeback', sans-serif;
-    font-size: 32px;
-    text-shadow: 0 2px 4px rgb(0, 0, 0);
-    margin: 0;
+  font-family: "Eightiescomeback", sans-serif;
+  font-size: 32px;
+  text-shadow: 0 2px 4px rgb(0, 0, 0);
+  margin: 0;
 }
 
 .hero-content p {
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
-    max-width: 600px;
-    margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  max-width: 600px;
+  margin: 0;
 }
 
 #button {
-    position: relative;
-    padding: 12px 25px;
-    font-size: 1rem;
-    color: white;
-    background-color: #9e9b66;
-    border: none;
-    overflow: hidden;
-    cursor: pointer;
-    z-index: 0;
-    transition: color 0.3s ease;
+  position: relative;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: white;
+  background-color: #9e9b66;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  transition: color 0.3s ease;
 }
 
 #button::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #3b4a36;
-    transform: translateY(100%);
-    transition: transform 0.5s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3b4a36;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  z-index: -1;
 }
 
 #button:hover::before {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 #button:hover {
-    color: white;
-    box-shadow: 0 6px 12px rgba(0, 50, 0, 0.4);
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 50, 0, 0.4);
 }
 
 .africa {
-    grid-area: africa;
-    width: 100%;
-    height: 150px;
-    background-image: url('https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp');
-    background-size: cover;
-    background-position: center;
+  grid-area: africa;
+  width: 100%;
+  height: 150px;
+  background-image: url("https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp");
+  background-size: cover;
+  background-position: center;
 }
-
-
 
 .africa2 {
-    grid-area: africa2;
-     width: 100%;
-    height: 150px;
-    background-image: url('https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp');
-    background-size: cover;
-    background-position: center;
+  grid-area: africa2;
+  width: 100%;
+  height: 150px;
+  background-image: url("https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp");
+  background-size: cover;
+  background-position: center;
 }
 .imgs {
-    padding: 180px 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  padding: 180px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .imgs1 {
-    grid-area: img1;
-
+  grid-area: img1;
 }
 
 .img {
-    width: 400px;
-    height: 550px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    animation: slideUp linear forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 60%;
+  width: 400px;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  animation: slideUp linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 60%;
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(100px) scale(0.9);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
 }
-
-
 
 .imgtxt {
-    width: 400px;
-    text-align: left;
-
+  width: 400px;
+  text-align: left;
 }
 
-
-
 .imgtxt h1 {
-    font-family: 'Eightiescomeback', sans-serif;
-    font-weight: 500;
-    font-size: 36px;
-    opacity: 0;
-    transform: scale(0.8) translateY(30px);
-    animation: growReveal ease-out forwards;
-    animation-timeline: view();
-    /* ties animation to scroll */
-    animation-range: entry 0% cover 60%;
-    /* starts when enters viewport */
+  font-family: "Eightiescomeback", sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.autoshow {
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+  animation: growReveal ease-out forwards;
+  animation-timeline: view();
+  /* ties animation to scroll */
+  animation-range: entry 0% cover 60%;
+  /* starts when enters viewport */
 }
 
 @keyframes growReveal {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(30px);
-        letter-spacing: -2px;
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    letter-spacing: -2px;
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-        letter-spacing: 1px;
-    }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    letter-spacing: 1px;
+  }
 }
 
 .imgtxt p {
-    margin-top: 20px;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-
+  margin-top: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .imgtxt #button {
-    margin-top: 30px;
-    font-size: 10px;
-    font-weight: 700;
+  margin-top: 30px;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .imgs2 {
-    grid-area: img2;
-    color: #fff;
-    background-color: #3b4a36;
+  grid-area: img2;
+  color: #fff;
+  background-color: #3b4a36;
 }
 
 .imgs2 span {
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-
 .imgs2 p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .container {
-    grid-area: container1;
-    padding: 100px 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #f4f3eb;
-    align-items: center;
+  grid-area: container1;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f4f3eb;
+  align-items: center;
 }
 
 .map {
-    height: 550px;
-    width: 700px;
-    background-image: url('https://ivaluations.net/wp-content/uploads/2023/07/1593_map_of_Northern_Europe_by_Gerard_de_Jode-2-2048x1152.jpeg');
-    background-size: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 0;
+  height: 550px;
+  width: 700px;
+  background-image: url("https://ivaluations.net/wp-content/uploads/2023/07/1593_map_of_Northern_Europe_by_Gerard_de_Jode-2-2048x1152.jpeg");
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 0;
 }
 
 .maptxt {
-    background-color: white;
-    width: 400px;
-    height: 280px;
-    text-align: center;
-    padding: 50px;
-    margin-left: -350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  background-color: white;
+  width: 400px;
+  height: 280px;
+  text-align: center;
+  padding: 50px;
+  margin-left: -350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-
 .maptxt h2 {
-    font-family: 'Eightiescomeback', sans-serif;
-    font-size: 28px;
-    font-weight: 500;
+  font-family: "Eightiescomeback", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: -15px;
 }
 
 .maptxt p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .maptxt #button {
-    background-color: transparent;
-    color: #3b4a36;
-    border: 2px solid #3b4a36;
-    margin-top: 10px;
-    font-size: 10px;
-    font-weight: 700;
+  background-color: transparent;
+  color: #3b4a36;
+  border: 2px solid #3b4a36;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .maptxt #button:hover {
-    color: white;
+  color: white;
 }
 
 #animal1 {
-    background-image: url('https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg');
+  background-image: url("https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg");
 }
 
 #animal2 {
-    background-image: url('https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb47_Chem-Chem-Conservation-Tanzania-Protecting-an-Ecosystem-in-East-Africa.jpg');
+  background-image: url("https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb47_Chem-Chem-Conservation-Tanzania-Protecting-an-Ecosystem-in-East-Africa.jpg");
 }
 
-
-
 .container3 {
-    grid-area: boxes4;
-    text-align: center;
-    padding-bottom: 50px;
+  grid-area: boxes4;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .container3 h1 {
-    font-family: 'Eightiescomeback', sans-serif;
-    font-size: 36px;
-    font-weight: 500;
-    color: #2e7d32;
-    margin-bottom: 20px;
+  font-family: "Eightiescomeback", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #2e7d32;
+  margin-bottom: 20px;
 }
 
 #wildlife-gallery .imgs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 20px;
-    padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+  padding: 0 20px;
 }
 
 #wildlife-gallery .box a {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-        box-shadow 0.4s ease;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.4s ease;
 }
 
 #wildlife-gallery .box a:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-
 #wildlife-gallery .imgs4 {
-    width: 100%;
-    height: 550px;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #wildlife-gallery .box a:hover .imgs4 {
-    transform: scale(1.07);
+  transform: scale(1.07);
 }
 
 #wildlife-gallery .box a span,
 #wildlife-gallery .box a p {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-align: center;
-    width: 90%;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 2;
-    pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
 }
 
 #wildlife-gallery .box a span {
-    top: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
 }
 
 #wildlife-gallery .box a p {
-    top: 60%;
-    font-size: 0.95rem;
+  top: 60%;
+  font-size: 0.95rem;
 }
 
 #wildlife-gallery .box a:hover span,
 #wildlife-gallery .box a:hover p {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.02);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.02);
 }
 
 #wildlife-gallery .box a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.4s ease;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.4s ease;
+  z-index: 1;
 }
 
 #wildlife-gallery .box a:hover::after {
-    background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
-
 #animal3 {
-    background-image: url('https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb4a_DSC09563-p-2000.jpg');
+  background-image: url("https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb4a_DSC09563-p-2000.jpg");
 }
 
 #animal4 {
-    background-image: url('https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb4d_P1010104-p-2000.jpg');
+  background-image: url("https://cdn.prod.website-files.com/64d0c00174665fe04475ca5f/64d0c00174665fe04475cb4d_P1010104-p-2000.jpg");
 }
 
-
-
-
-
 footer {
-    grid-area: footer;
-    background-color: #9e9b66;
-    padding: 20px 0;
+  grid-area: footer;
+  background-color: #9e9b66;
+  padding: 20px 0;
 }
 
 footer h2 {
-    font-family: 'Eightiescomeback', sans-serif;
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-family: "Eightiescomeback", sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 hr {
-    margin: 10px 0;
-    border: none;
-    height: 2px;
-    background: white;
-    width: 100%;
+  margin: 10px 0;
+  border: none;
+  height: 2px;
+  background: white;
+  width: 100%;
 }
 
 .container4 {
-    font-family: 'Josefin Sans', sans-serif;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    color: white;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: white;
 }
 
 .firbox {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 200px;
 }
 
 #call {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 #call i {
-    font-size: 20px;
-    margin-top: 5px;
+  font-size: 20px;
+  margin-top: 5px;
 }
 
 .no {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .firbox a {
-    padding: 5px 0;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  padding: 5px 0;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .firbox a:hover {
-    color: #ffdf80;
+  color: #ffdf80;
 }
 
 .followicons i {
-    font-size: 20px;
-    margin: 5px;
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 20px;
+  margin: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .followicons i:hover {
-    transform: scale(1.2);
-    color: #ffdf80;
+  transform: scale(1.2);
+  color: #ffdf80;
 }
 
 .copyright {
-    background-color: #3b4a36;
-    color: #ccc;
-    text-align: center;
-    font-size: 14px;
-    padding: 12px 10px;
-    margin-bottom: -20px;
+  background-color: #3b4a36;
+  color: #ccc;
+  text-align: center;
+  font-size: 14px;
+  padding: 12px 10px;
+  margin-bottom: -20px;
 }
 
 .copyright p {
-    font-family: 'Eightiescomeback', sans-serif;
-    margin: 0;
+  font-family: "Eightiescomeback", sans-serif;
+  margin: 0;
+}
+
+.designer {
+  grid-area: designer;
+  width: 80%;
+  height: 100%;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
+}
+
+.design {
+  font-family: "Eightiescomeback", sans-serif;
+
+  font-size: 6em;
+  color: #2e7d32;
+  animation: autoblurAnimation linear both;
+  animation-timeline: view();
+}
+
+.designer div {
+  grid-column: 2/ 6;
+  text-wrap: nowrap;
+}
+.designer div:nth-child(even) {
+  text-align: right;
+}
+.designer div:nth-child(5) {
+  grid-column: 1/ 6;
+}
+.designer div:nth-child(4) {
+  grid-column: 1/ 7;
+}
+
+@keyframes autoblurAnimation {
+  0% {
+    filter: blur(40px);
+  }
+
+  45%,
+  55% {
+    filter: blur(0px);
+  }
+
+  100% {
+    filter: blur(40px);
+  }
 }
 
 @media (max-width: 768px) {
-    * {
-        margin: 0;
-        padding: 0;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas:
-            "header header header "
-            "landing landing landing "
-            "img1 img1 img1 "
-            "africa africa africa "
-            "img2 img2 img2"
-            "container1 container1 container1 "
-            "boxes4 boxes4 boxes4"
-            "africa2 africa2 africa2 "
-            "footer footer footer"
-        ;
-    }
+  body {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header header "
+      "landing landing landing "
+      "img1 img1 img1 "
+      "africa africa africa "
+      "img2 img2 img2"
+      "container1 container1 container1 "
+      "boxes4 boxes4 boxes4"
+      "africa2 africa2 africa2 "
+      "footer footer footer";
+  }
 
-    header #logo {
-        margin-left: 0px;
-    }
+  header #logo {
+    margin-left: 0px;
+  }
 
-    header nav {
-        display: none;
-    }
+  header nav {
+    display: none;
+  }
 
-    .video {
-        height: 100vh;
-        width: 100%;
-    }
+  .video {
+    height: 100vh;
+    width: 100%;
+  }
 
-    .hero-content h1 {
-        font-size: 20px;
-    }
+  .hero-content h1 {
+    font-size: 20px;
+  }
 
-    .imgs1 {
-        margin-top: 200px;
-    }
+  .imgs1 {
+    margin-top: 200px;
+  }
 
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    }
+  .map {
+    position: relative;
+    width: 480px;
+    height: 550px;
+    margin-left: -100px;
+    padding: 0;
+  }
 
-    .map {
-        position: relative;
-        width: 480px;
-        height: 550px;
-        margin-left: -100px;
-        padding: 0;
-    }
+  .maptxt {
+    width: 300px;
+    height: 250px;
+    font-size: 15px;
+  }
 
-    .maptxt {
-        width: 300px;
-        height: 250px;
-        font-size: 15px;
-    }
+  .maptxt h2 {
+    font-size: 20px;
+    margin-top: -20px;
+  }
 
-    .maptxt h2 {
-        font-size: 20px;
-        margin-top: -20px;
-    }
+  .maptxt p,
+  #button {
+    font-size: 13px;
+  }
 
-    .maptxt p,
-    #button {
-        font-size: 13px;
-    }
+  .container3 {
+    margin-top: 0px;
+  }
 
-    .container3 {
-        margin-top: 0px;
-    }
+  #wildlife-gallery .imgs {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 20px;
+    padding: 0 20px;
+  }
 
-    #wildlife-gallery .imgs {
-        grid-template-columns: repeat(1, 1fr);
-        margin-top: 20px;
-        padding: 0 20px;
-    }
+  .container4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .container4 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .copyright {
-        font-size: 15px;
-    }
+  .copyright {
+    font-size: 15px;
+  }
 }
 
-
 @media (max-width: 400px) {
-    body {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "landing"
-            "img1"
-            "africa"
-            "img2"
-            "container1"
-            "boxes4"
-            "africa2"
-            "footer";
-    }
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "landing"
+      "img1"
+      "africa"
+      "img2"
+      "container1"
+      "boxes4"
+      "africa2"
+      "footer";
+  }
 
-    header {
-        padding: 8px;
-    }
+  header {
+    padding: 8px;
+  }
 
-    #logo {
-        width: 70px;
-        margin-left: 0;
-        padding: 5px;
-    }
+  #logo {
+    width: 70px;
+    margin-left: 0;
+    padding: 5px;
+  }
 
-    .hero-content {
-        margin-top: -300px;
-        gap: 6px;
-    }
+  .hero-content {
+    margin-top: -300px;
+    gap: 6px;
+  }
 
-    .hero-content h1 {
-        font-size: 16px;
-    }
+  .hero-content h1 {
+    font-size: 16px;
+  }
 
-    .imgs {
-        flex-direction: column;
-        gap: 10px;
-        padding: 60px 0;
-    }
+  .imgs {
+    flex-direction: column;
+    gap: 10px;
+    padding: 60px 0;
+  }
 
-    .img {
-        width: 95%;
-        height: 350px;
-    }
+  .img {
+    width: 95%;
+    height: 350px;
+  }
 
-    .imgtxt {
-        width: 95%;
-    }
+  .imgtxt {
+    width: 95%;
+  }
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .map {
-        width: 95%;
-        height: 250px;
-        margin-left: 0;
-        order: 1;
-    }
+  .map {
+    width: 95%;
+    height: 250px;
+    margin-left: 0;
+    order: 1;
+  }
 
-    .maptxt {
-        width: 90%;
-        height: auto;
-        margin: 15px 0 0 0;
-        padding: 15px;
-        order: 2;
-    }
+  .maptxt {
+    width: 90%;
+    height: auto;
+    margin: 15px 0 0 0;
+    padding: 15px;
+    order: 2;
+  }
 
-    #wildlife-gallery .imgs {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+  #wildlife-gallery .imgs {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
-    .container4 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .container4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .copyright {
-        font-size: 12px;
-        padding: 10px 5px;
-    }
+  .copyright {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
 }
