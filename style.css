@@ -36,11 +36,12 @@ body {
 
 .landing {
   grid-area: landing;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   margin-top: 0%;
+  position: relative;
 }
 
 video {
@@ -71,9 +72,8 @@ header {
   width: 100%;
   height: 70px;
   padding: 10px 20px;
-
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.02);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -82,17 +82,17 @@ header {
   z-index: 1000;
 }
 
-
 #logo {
-  width: 100px;
+  width: clamp(70px, 15vw, 100px);
   padding: 20px;
-  margin-left: -100px;
   margin-top: 10px;
+  flex-shrink: 0;
 }
 
 #nav {
-  margin-left: 70px;
   color: #ffffff;
+  display: flex;
+  gap: clamp(5px, 2vw, 20px);
 }
 
 #nav a {
@@ -100,13 +100,13 @@ header {
   text-decoration: none;
   padding: 10px 15px;
   color: #9e9b66;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   font-weight: 600;
-  margin-left: 0%;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
   letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 #nav a::after {
@@ -133,31 +133,35 @@ header {
   text-align: center;
   color: #ffffff;
   display: flex;
-  margin-top: -300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  position: relative;
+  gap: clamp(8px, 2vw, 12px);
   z-index: 5;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
   font-family: "Eightiescomeback", sans-serif;
-  font-size: 32px;
+  font-size: clamp(20px, 6vw, 32px);
   text-shadow: 0 2px 4px rgb(0, 0, 0);
   margin: 0;
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   max-width: 600px;
   margin: 0;
+  line-height: 1.5;
 }
 
 #button {
   position: relative;
-  padding: 12px 25px;
-  font-size: 1rem;
+  padding: clamp(8px, 2vw, 12px) clamp(15px, 4vw, 25px);
+  font-size: clamp(0.8rem, 2vw, 1rem);
   color: white;
   background-color: #9e9b66;
   border: none;
@@ -192,7 +196,7 @@ header {
 .africa {
   grid-area: africa;
   width: 100%;
-  height: 150px;
+  height: clamp(100px, 20vw, 150px);
   background-image: url("https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp");
   background-size: cover;
   background-position: center;
@@ -201,18 +205,19 @@ header {
 .africa2 {
   grid-area: africa2;
   width: 100%;
-  height: 150px;
+  height: clamp(100px, 20vw, 150px);
   background-image: url("https://cdn.prod.website-files.com/662a6c464c7765c6ea5c8a79/6659d6b747a911323c33bdba_salute-vector-1.webp");
   background-size: cover;
   background-position: center;
 }
+
 .imgs {
-  padding: 180px 0;
+  padding: clamp(60px, 15vw, 180px) clamp(20px, 5vw, 40px);
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: clamp(20px, 5vw, 40px);
 }
 
 .imgs1 {
@@ -220,8 +225,8 @@ header {
 }
 
 .img {
-  width: 400px;
-  height: 550px;
+  width: clamp(300px, 45vw, 400px);
+  height: clamp(350px, 60vw, 550px);
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -244,14 +249,15 @@ header {
 }
 
 .imgtxt {
-  width: 400px;
+  width: clamp(300px, 45vw, 400px);
   text-align: left;
 }
 
 .imgtxt h1 {
   font-family: "Eightiescomeback", sans-serif;
   font-weight: 500;
-  font-size: 36px;
+  font-size: clamp(24px, 6vw, 36px);
+  line-height: 1.2;
 }
 
 .autoshow {
@@ -259,9 +265,7 @@ header {
   transform: scale(0.8) translateY(30px);
   animation: growReveal ease-out forwards;
   animation-timeline: view();
-  /* ties animation to scroll */
   animation-range: entry 0% cover 60%;
-  /* starts when enters viewport */
 }
 
 @keyframes growReveal {
@@ -279,15 +283,16 @@ header {
 }
 
 .imgtxt p {
-  margin-top: 20px;
+  margin-top: clamp(15px, 3vw, 20px);
   font-family: "Manrope", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: 1.5;
 }
 
 .imgtxt #button {
-  margin-top: 30px;
-  font-size: 10px;
+  margin-top: clamp(20px, 4vw, 30px);
+  font-size: clamp(8px, 2vw, 10px);
   font-weight: 700;
 }
 
@@ -299,61 +304,69 @@ header {
 
 .imgs2 span {
   font-weight: 700;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
 .imgs2 p {
-  font-size: 15px;
+  font-size: clamp(12px, 2.5vw, 15px);
 }
 
 .container {
   grid-area: container1;
-  padding: 100px 0;
+  padding: clamp(50px, 10vw, 100px) clamp(20px, 5vw, 40px);
   display: flex;
   justify-content: space-around;
   background-color: #f4f3eb;
   align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 5vw, 40px);
 }
 
 .map {
-  height: 550px;
-  width: 700px;
+  height: clamp(300px, 60vw, 550px);
+  width: clamp(350px, 70vw, 700px);
   background-image: url("https://ivaluations.net/wp-content/uploads/2023/07/1593_map_of_Northern_Europe_by_Gerard_de_Jode-2-2048x1152.jpeg");
   background-size: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 0;
+  flex-shrink: 0;
 }
 
 .maptxt {
   background-color: white;
-  width: 400px;
-  height: 280px;
+  width: clamp(250px, 50vw, 400px);
+  height: auto;
+  min-height: clamp(200px, 40vw, 280px);
   text-align: center;
-  padding: 50px;
-  margin-left: -350px;
+  padding: clamp(20px, 5vw, 50px);
+  margin-left: clamp(-100px, -20vw, -350px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  position: relative;
 }
 
 .maptxt h2 {
   font-family: "Eightiescomeback", sans-serif;
-  font-size: 28px;
+  font-size: clamp(20px, 5vw, 28px);
   font-weight: 500;
   margin-top: -15px;
+  line-height: 1.2;
 }
 
 .maptxt p {
   font-family: "Manrope", sans-serif;
-  font-size: 15px;
+  font-size: clamp(12px, 2.5vw, 15px);
   font-weight: 400;
+  line-height: 1.4;
+  margin: clamp(10px, 2vw, 15px) 0;
 }
 
 .maptxt #button {
   background-color: transparent;
   color: #3b4a36;
   border: 2px solid #3b4a36;
-  margin-top: 10px;
-  font-size: 10px;
+  margin-top: clamp(8px, 2vw, 10px);
+  font-size: clamp(8px, 1.5vw, 10px);
   font-weight: 700;
 }
 
@@ -372,23 +385,24 @@ header {
 .container3 {
   grid-area: boxes4;
   text-align: center;
-  padding: 50px 0;
+  padding: clamp(30px, 8vw, 50px) clamp(20px, 5vw, 40px);
 }
 
 .container3 h1 {
   font-family: "Eightiescomeback", sans-serif;
-  font-size: 36px;
+  font-size: clamp(24px, 6vw, 36px);
   font-weight: 500;
   color: #2e7d32;
-  margin-bottom: 20px;
+  margin-bottom: clamp(15px, 3vw, 20px);
+  line-height: 1.2;
 }
 
 #wildlife-gallery .imgs {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 20px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 40vw, 400px), 1fr));
+  gap: clamp(15px, 4vw, 25px);
+  margin-top: clamp(15px, 3vw, 20px);
+  padding: 0 clamp(10px, 3vw, 20px);
 }
 
 #wildlife-gallery .box a {
@@ -409,7 +423,7 @@ header {
 
 #wildlife-gallery .imgs4 {
   width: 100%;
-  height: 550px;
+  height: clamp(300px, 50vw, 550px);
   background-size: cover;
   background-position: center;
   transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -435,14 +449,14 @@ header {
 
 #wildlife-gallery .box a span {
   top: 50%;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: bold;
   transform: translate(-50%, -50%);
 }
 
 #wildlife-gallery .box a p {
   top: 60%;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
 }
 
 #wildlife-gallery .box a:hover span,
@@ -475,17 +489,17 @@ header {
 footer {
   grid-area: footer;
   background-color: #9e9b66;
-  padding: 20px 0;
+  padding: clamp(15px, 3vw, 20px) 0;
 }
 
 footer h2 {
   font-family: "Eightiescomeback", sans-serif;
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: clamp(20px, 5vw, 28px);
+  margin-bottom: clamp(8px, 2vw, 10px);
 }
 
 hr {
-  margin: 10px 0;
+  margin: clamp(8px, 2vw, 10px) 0;
   border: none;
   height: 2px;
   background: white;
@@ -500,24 +514,27 @@ hr {
   align-items: flex-start;
   flex-wrap: wrap;
   color: white;
+  gap: clamp(20px, 4vw, 40px);
+  padding: 0 clamp(10px, 3vw, 20px);
 }
 
 .firbox {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  min-width: 200px;
+  padding: clamp(15px, 3vw, 20px);
+  min-width: clamp(150px, 25vw, 200px);
+  flex: 1;
 }
 
 #call {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: clamp(8px, 2vw, 10px);
   align-items: flex-start;
 }
 
 #call i {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   margin-top: 5px;
 }
 
@@ -527,10 +544,11 @@ hr {
 }
 
 .firbox a {
-  padding: 5px 0;
+  padding: clamp(3px, 1vw, 5px) 0;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: clamp(12px, 2.5vw, 14px);
 }
 
 .firbox a:hover {
@@ -538,8 +556,8 @@ hr {
 }
 
 .followicons i {
-  font-size: 20px;
-  margin: 5px;
+  font-size: clamp(16px, 3vw, 20px);
+  margin: clamp(3px, 1vw, 5px);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -552,8 +570,8 @@ hr {
   background-color: #3b4a36;
   color: #ccc;
   text-align: center;
-  font-size: 14px;
-  padding: 12px 10px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  padding: clamp(10px, 2vw, 12px) clamp(8px, 2vw, 10px);
   margin-bottom: -20px;
 }
 
@@ -566,16 +584,16 @@ hr {
   grid-area: designer;
   width: 80%;
   height: 100%;
-  padding: 50px 0;
+  padding: clamp(30px, 8vw, 50px) 0;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   text-align: center;
+  margin: 0 auto;
 }
 
 .design {
   font-family: "Eightiescomeback", sans-serif;
-
-  font-size: 6em;
+  font-size: clamp(2em, 8vw, 6em);
   color: #2e7d32;
   animation: autoblurAnimation linear both;
   animation-timeline: view();
@@ -610,181 +628,159 @@ hr {
   }
 }
 
-@media (max-width: 768px) {
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header header header "
-      "landing landing landing "
-      "img1 img1 img1 "
-      "africa africa africa "
-      "img2 img2 img2"
-      "container1 container1 container1 "
-      "boxes4 boxes4 boxes4"
-      "africa2 africa2 africa2 "
-      "footer footer footer";
-  }
-
-  header #logo {
-    margin-left: 0px;
-  }
-
-  header nav {
-    display: none;
-  }
-
-  .video {
-    height: 100vh;
-    width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 20px;
-  }
-
-  .imgs1 {
-    margin-top: 200px;
-  }
-
+/* Improved Tablet Styles */
+@media (max-width: 1024px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .map {
-    position: relative;
-    width: 480px;
-    height: 550px;
-    margin-left: -100px;
-    padding: 0;
-  }
-
-  .maptxt {
-    width: 300px;
-    height: 250px;
-    font-size: 15px;
-  }
-
-  .maptxt h2 {
-    font-size: 20px;
-    margin-top: -20px;
-  }
-
-  .maptxt p,
-  #button {
-    font-size: 13px;
-  }
-
-  .container3 {
-    margin-top: 0px;
-  }
-
-  #wildlife-gallery .imgs {
-    grid-template-columns: repeat(1, 1fr);
-    margin-top: 20px;
-    padding: 0 20px;
-  }
-
-  .container4 {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
-  .copyright {
-    font-size: 15px;
+  
+  .map {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .maptxt {
+    order: 2;
+    margin-left: 0;
+    position: static;
+  }
+  
+  .imgs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .designer {
+    width: 95%;
   }
 }
 
-@media (max-width: 400px) {
+/* Improved Mobile Styles */
+@media (max-width: 768px) {
   body {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
       "landing"
       "img1"
-      "africa"
-      "img2"
+      "designer"
       "container1"
+      "img2"
+      "africa"
       "boxes4"
       "africa2"
       "footer";
   }
 
   header {
-    padding: 8px;
+    justify-content: space-between;
+    padding: 10px 15px;
   }
 
   #logo {
-    width: 70px;
     margin-left: 0;
-    padding: 5px;
+    margin-top: 5px;
+  }
+
+  #nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .video {
+    height: 100vh;
+  }
+
+  .landing {
+    height: 100vh;
+    width: 100%;
   }
 
   .hero-content {
-    margin-top: -300px;
-    gap: 6px;
-  }
-
-  .hero-content h1 {
-    font-size: 16px;
+    padding: 0 15px;
   }
 
   .imgs {
     flex-direction: column;
-    gap: 10px;
-    padding: 60px 0;
-  }
-
-  .img {
-    width: 95%;
-    height: 350px;
-  }
-
-  .imgtxt {
-    width: 95%;
+    align-items: center;
+    padding: 40px 15px;
   }
 
   .container {
     flex-direction: column;
-    align-items: center;
+    padding: 40px 15px;
   }
 
   .map {
-    width: 95%;
-    height: 250px;
-    margin-left: 0;
     order: 1;
+    margin-left: 0;
+    margin-bottom: 20px;
   }
 
   .maptxt {
-    width: 90%;
-    height: auto;
-    margin: 15px 0 0 0;
-    padding: 15px;
     order: 2;
+    margin-left: 0;
+    position: static;
   }
 
   #wildlife-gallery .imgs {
     grid-template-columns: 1fr;
-    gap: 15px;
+    padding: 0 15px;
   }
 
   .container4 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0 15px;
   }
 
-  .copyright {
-    font-size: 12px;
-    padding: 10px 5px;
+  .firbox {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .designer {
+    width: 95%;
+  }
+}
+
+/* Extra Small Mobile Styles */
+@media (max-width: 480px) {
+  #nav {
+    display: none;
+  }
+
+  .hero-content {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .imgs {
+    padding: 30px 10px;
+    gap: 15px;
+  }
+
+  .container {
+    padding: 30px 10px;
+  }
+
+  .container3 {
+    padding: 25px 10px;
+  }
+
+  #wildlife-gallery .imgs {
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .container4 {
+    padding: 0 10px;
+  }
+
+  .designer {
+    width: 100%;
+    padding: 20px 0;
   }
 }
